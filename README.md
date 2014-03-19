@@ -6,17 +6,22 @@
 
 ### Ttransform stream
 
-* xtrema.through
-* xtream.map
-* xtream.reduce
-* xtream.filter
+* xtrema.through(streamOptions, transform, flush)
+* xtream.map(streamOptions, mapCallback)
+* xtream.reduce(streamOptions, reduceCallback, initial)
+* xtream.filter(streamOptions, filterCallback)
 
 ### Passthrough streams
 
+* xtream.inspect
     
 ### Readable streams
 
 * xtream.split
+
+### Writeable streams
+
+* xtream.concat
 
 ### Stream control
 
