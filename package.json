@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/RobinQu/xtream",
   "dependencies": {
-    "readable-stream": "~1.0.26-2"
+    "readable-stream": "~1.0.26-2",
+    "lodash": "~2.4.1"
   }
 }

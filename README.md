@@ -6,14 +6,14 @@
 
 ### Ttransform stream
 
-* xtrema.through(streamOptions, transform, flush)
+* xtream.through(streamOptions, transform, flush)
 * xtream.map(streamOptions, mapCallback)
 * xtream.reduce(streamOptions, reduceCallback, initial)
 * xtream.filter(streamOptions, filterCallback)
 
 ### Passthrough streams
 
-* xtream.inspect
+* xtream.inspect(streamOptions, inspectCallback)
     
 ### Readable streams
 
@@ -27,3 +27,10 @@
 
 * xtream.combine
 
+
+
+
+## References
+
+* http://codewinds.com/blog/2013-08-31-nodejs-duplex-streams.html
+* https://github.com/substack/stream-handbook
