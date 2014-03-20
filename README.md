@@ -14,7 +14,11 @@
 ### Passthrough streams
 
 * xtream.inspect(streamOptions, inspectCallback)
-    
+
+### Duplex streams
+
+* xtream.duplex(readableStream, writableStream)
+
 ### Readable streams
 
 * xtream.split
@@ -26,8 +30,6 @@
 ### Stream control
 
 * xtream.combine
-
-
 
 
 ## References
