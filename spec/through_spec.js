@@ -267,10 +267,11 @@ describe("through object ctor", function() {
 
     var th = new Th();
 
-    var expect = [-19, -40, 100, 22];
+    var expects = [-19, -40, 100, 22];
     th.on("data", function (o) {
-      expect(o).toEqual({ temp: expect.shift(), unit: "C" });
+      expect(o).toEqual({ temp: expects.shift(), unit: "C" });
     });
+    th.on("end", done);
 
     spigot({objectMode: true}, [
       {temp: -2.2, unit: "F"},

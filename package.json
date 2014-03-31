@@ -4,7 +4,7 @@
   "description": "Stream2 helpers",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/jasmine-node/bin/jasmine-node --verbose spec/"
+    "test": "./node_modules/jasmine-node/bin/jasmine-node --captureExceptions --verbose spec/"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,8 @@
   "homepage": "https://github.com/RobinQu/xtream",
   "dependencies": {
     "readable-stream": "~1.0.26-2",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "debug": "~0.8.0"
   },
   "devDependencies": {
     "stream-spigot": "~3.0.3",
