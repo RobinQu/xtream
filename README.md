@@ -1,5 +1,8 @@
 # xtream
 
+[![Build Status](https://travis-ci.org/RobinQu/xtream.svg?branch=master)](https://travis-ci.org/RobinQu/xtream.js)
+
+
 `stream2` helpers, inspired by `rvagg/through2` and its friends
 
 ## TL;DL
