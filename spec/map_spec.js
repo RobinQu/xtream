@@ -5,7 +5,7 @@ var map = require("../lib/map"),
     concat = require("../lib/concat");
 
 
-describe("Map", function() {
+describe("map", function() {
   
   describe("ctor", function() {
     it("should act as a constructor factory", function(done) {

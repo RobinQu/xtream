@@ -4,7 +4,7 @@
   "description": "Stream2 helpers",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/jasmine-node/bin/jasmine-node --captureExceptions --verbose spec/"
+    "test": "DEBUG=* ./node_modules/jasmine-node/bin/jasmine-node --captureExceptions --verbose spec/"
   },
   "repository": {
     "type": "git",
