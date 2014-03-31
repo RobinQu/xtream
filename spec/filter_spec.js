@@ -49,93 +49,93 @@ describe("filter", function () {
       .pipe(new Filter())
       .pipe(concat(combine));
   });
-  // 
-  // it("should support stringify in options", function(done) {
-  //   var Filter = filter.ctor({stringify: true}, function (chunk) {
-  //     return chunk.length <= 5;
-  //   });
-  // 
-  //   function combine(result) {
-  //     expect(result.toString()).toEqual("abuvwxyz");
-  //     done();
-  //   }
-  // 
-  //   spigot([
-  //     "a",
-  //     "b",
-  //     "cskipk",
-  //     "lmnopqrstskip",
-  //     "u",
-  //     "vwxyz",
-  //   ]).pipe(new Filter())
-  //     .pipe(concat(combine));
-  // 
-  // });
-  // 
+  
+  it("should support stringify in options", function(done) {
+    var Filter = filter.ctor({stringify: true}, function (chunk) {
+      return chunk.length <= 5;
+    });
+  
+    function combine(e, result) {
+      expect(result.toString()).toEqual("abuvwxyz");
+      done();
+    }
+  
+    spigot([
+      "a",
+      "b",
+      "cskipk",
+      "lmnopqrstskip",
+      "u",
+      "vwxyz",
+    ]).pipe(new Filter())
+      .pipe(concat(combine));
+  
+  });
   
   
-  // it("should filter", function(done) {
-  //   var f = filter({objectMode: true}, function (record) {
-  //     return !record.skip;
-  //   });
-  // 
-  //   function combine(records) {
-  //     expect(records.length).toEqual(3);
-  //     expect(records.filter(function (r) { return r.skip; }).length).noBeFalsy();
-  //     done();
-  //   }
-  // 
-  //   spigot({objectMode: true}, [
-  //     {foo: "bar"},
-  //     {foo: "baz", skip: true},
-  //     {foo: "bif", skip: true},
-  //     {foo: "blah"},
-  //     {foo: "buzz"},
-  //   ])
-  //     .pipe(f)
-  //     .pipe(concat(combine));
-  // });
-  // 
-  // it("should hanlde buffers", function(done) {
-  //   var f = filter({objectMode: true}, function (chunk) {
-  //     return chunk.length <= 5;
-  //   });
-  // 
-  //   function combine(result) {
-  //     expect(result.toString()).toEqual("abuvwxyz");
-  //     done();
-  //   }
-  // 
-  //   spigot([
-  //     "a",
-  //     "b",
-  //     "cdefghijk",
-  //     "lmnopqrst",
-  //     "u",
-  //     "vwxyz",
-  //   ]).pipe(f)
-  //     .pipe(concat(combine));
-  // });
-  // 
-  // it("should support index", function(done) {
-  //   var f = filter({objectMode: true}, function (record, index) {
-  //     return index < 2;
-  //   });
-  // 
-  //   function combine(records) {
-  //     expect(records, [{foo: "bar"},{foo: "baz"}]);
-  //     done();
-  //   }
-  // 
-  //   spigot({objectMode: true}, [
-  //     {foo: "bar"},
-  //     {foo: "baz"},
-  //     {foo: "bif"},
-  //     {foo: "blah"},
-  //     {foo: "buzz"},
-  //   ])
-  //     .pipe(f)
-  //     .pipe(concat(combine));
-  // });
+  
+  it("should filter", function(done) {
+    var f = filter({objectMode: true}, function (record) {
+      return !record.skip;
+    });
+  
+    function combine(e, records) {
+      expect(records.length).toEqual(3);
+      expect(records.filter(function (r) { return r.skip; }).length).toBeFalsy();
+      done();
+    }
+  
+    spigot({objectMode: true}, [
+      {foo: "bar"},
+      {foo: "baz", skip: true},
+      {foo: "bif", skip: true},
+      {foo: "blah"},
+      {foo: "buzz"},
+    ])
+      .pipe(f)
+      .pipe(concat(combine));
+  });
+  
+  it("should hanlde buffers", function(done) {
+    var f = filter({objectMode: true}, function (chunk) {
+      return chunk.length <= 5;
+    });
+  
+    function combine(e, result) {
+      expect(result.toString()).toEqual("abuvwxyz");
+      done();
+    }
+  
+    spigot([
+      "a",
+      "b",
+      "cdefghijk",
+      "lmnopqrst",
+      "u",
+      "vwxyz",
+    ]).pipe(f)
+      .pipe(concat(combine));
+  });
+  
+  it("should support index", function(done) {
+    var f = filter({objectMode: true}, function (record, index) {
+      return index < 2;
+    });
+  
+    function combine(e, records) {
+      expect(records, [{foo: "bar"},{foo: "baz"}]);
+      done();
+    }
+  
+    spigot({objectMode: true}, [
+      {foo: "bar"},
+      {foo: "baz"},
+      {foo: "bif"},
+      {foo: "blah"},
+      {foo: "buzz"},
+    ])
+      .pipe(f)
+      .pipe(concat(combine));
+  });
 
 });
