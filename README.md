@@ -16,26 +16,37 @@
 * xtream.reduce(streamOptions, reduceCallback, initial)
 * xtream.filter(streamOptions, filterCallback)
 
+Transform stream helpers that mimick the Array operations.
+
 ### Passthrough streams
 
 * xtream.inspect(streamOptions, inspectCallback)
+
+Do nothing but emit every read data to `inspectCallback`
 
 ### Duplex streams
 
 * xtream.duplex(streamOptions, readableStream, writableStream)
 
+Generate a duplex stream that write to `writableStream`, read from `readableStream`
+
 ### Readable streams
 
-* xtream.split(options, spliter, mapCallback);
+* xtream.split(streamOptions, spliter, mapCallback);
+
+Split emitted data using `spliter`. Optional `mapCallback` can be assigned to process each splited result.
 
 ### Writeable streams
 
 * xtream.concat(completeCallback)
 
-### Stream control(untested)
+Collect all readable contents into the `completeCallback`.
 
-* xtream.combine
+### Stream control
 
+* xtream.combine(fisrtStream, secondStream, thirdStream, ..., lastStream);
+
+Generate a stream pipeline; Write to the first stream, read from last stream and each stream is piped to the next in line.
 
 ## References
 
