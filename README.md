@@ -52,3 +52,4 @@ Generate a stream pipeline; Write to the first stream, read from last stream and
 
 * http://codewinds.com/blog/2013-08-31-nodejs-duplex-streams.html
 * https://github.com/substack/stream-handbook
+* http://codyaray.com/2013/04/intro-to-streams2-new-node-streams-part-1
