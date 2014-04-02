@@ -1,7 +1,9 @@
 # xtream
 
-[![Build Status](https://travis-ci.org/RobinQu/xtream.svg?branch=master)](https://travis-ci.org/RobinQu/xtream.js)
+[![NPM](https://nodei.co/npm/xtream.png)](https://nodei.co/npm/xtream/)
 
+
+[![Build Status](https://travis-ci.org/RobinQu/xtream.svg?branch=master)](https://travis-ci.org/RobinQu/xtream)
 
 `stream2` helpers, inspired by `rvagg/through2` and its friends
 
@@ -20,17 +22,17 @@
 
 ### Duplex streams
 
-* xtream.duplex(readableStream, writableStream)
+* xtream.duplex(streamOptions, readableStream, writableStream)
 
 ### Readable streams
 
-* xtream.split
+* xtream.split(options, spliter, mapCallback);
 
 ### Writeable streams
 
-* xtream.concat
+* xtream.concat(completeCallback)
 
-### Stream control
+### Stream control(untested)
 
 * xtream.combine
 

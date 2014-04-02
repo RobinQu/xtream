@@ -11,7 +11,7 @@ var split = require('..'),
 
 describe("split", function() {
   
-  it("should work like String#split", function(done) {
+  xit("should work like String#split", function(done) {
     fs.readFile(__filename, "utf-8", function(e, content) {
       var expected = content.split("\n");
       // console.log(expected.length);
@@ -33,7 +33,9 @@ describe("split", function() {
     var piece1 = unicodeData.slice(0, 20);
     var piece2 = unicodeData.slice(20, unicodeData.length);
     s.on("readable", function() {
-      rows.push(s.read());
+      while(null !== (chunk = s.read())) {
+        rows.push(chunk);
+      }
     });
     s.write(piece1);
     s.write(piece2);
@@ -47,7 +49,7 @@ describe("split", function() {
     
   });
   
-  it("should limit max buffer", function() {
+  xit("should limit max buffer", function() {
     var s = split({maxLength: 2}, JSON.parse);
     var errorCb = jasmine.createSpy();
     s.on("error", errorCb);
@@ -57,7 +59,7 @@ describe("split", function() {
     s.write("fdjalfkdsafdjks");
   });
   
-  describe("map function", function() {
+  xdescribe("map function", function() {
     it("should take mapper function", function(done) {
       fs.readFile(__filename, "utf-8", function(e, content) {
         var expected = content.split("\n").map(function(line) {
