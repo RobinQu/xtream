@@ -8,7 +8,7 @@ describe("filter", function () {
 
   it("should have working ctor", function(done) {
     var Filter = filter.ctor(function (record) {
-      // console.log(record);
+      console.log(record);
       return !record.skip;
     });
     function combine(e, records) {
